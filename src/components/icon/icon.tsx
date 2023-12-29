@@ -14,8 +14,8 @@ const icons: any = {
 
 const Icon = (props: IIconProps) => {
     const { name, className, size = 5} = props;
-    return <svg className={`w-${size} h-${size} text-white ${className}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icons[name]} />
+    return <svg className={`w-${size} text-white ${className ? className : ''}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={icons[name]} />
     </svg>
 }
 

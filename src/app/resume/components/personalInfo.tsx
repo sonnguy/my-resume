@@ -19,15 +19,15 @@ const ResumePersonalInfo = () => {
         </div>
         <h1 className="text-white py-3 font-bold">CONTACT</h1>
         <div className="flex pb-3">
-            <Icon name={'phone'} size={4} />
+            <Icon name={'phone'} size={5} />
             <p className="text-white ml-3">{phone}</p>
         </div>
         <div className="flex pb-3">
-            <Icon name={'mail'} size={4} />
+            <Icon name={'mail'} size={5} />
             <p className="text-white ml-3">{email}</p>
         </div>
         <div className="flex pb-3">
-            <Icon name={'mapMaker'} size={4} />
+            <Icon name={'mapMaker'} size={5} />
             <p className="text-white ml-3">{address}</p>
         </div>
     </div>
