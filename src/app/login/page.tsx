@@ -1,12 +1,17 @@
 'use client'
+import { login } from '@/api/auth';
 import LoginForm from '@/components/form/login';
 import { ILoginForm } from '@/types/interfaces/auth';
 import React from 'react';
 
-const Login: React.FC = () => {
-
-  const handleFormSubmit = (data: ILoginForm) => {
-    console.log(data);
+const Login = () => {
+  const handleFormSubmit = async (data: ILoginForm) => {
+    try {
+      const res = await login(data);
+      console.log(res)
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (

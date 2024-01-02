@@ -16,7 +16,7 @@ const RegisterForm = ({ onSubmit }: IRegisterFormProps) => {
     });
 
     const handleFormSubmit = (data: IRegisterForm) => {
-        onSubmit(data);
+        onSubmit({ ...data, username: data.email });
     };
 
     return (
@@ -24,11 +24,18 @@ const RegisterForm = ({ onSubmit }: IRegisterFormProps) => {
             <h2 className="text-2xl font-semibold mb-6 text-center">Register</h2>
             <div className="mb-4">
                 <FormInput
-                    label="Username"
-                    name="username"
+                    label="First Name"
+                    name="firstName"
                     type="text"
                     register={register}
-                    error={errors.username}
+                    error={errors.firstName}
+                />
+                <FormInput
+                    label="Last Name"
+                    name="lastName"
+                    type="text"
+                    register={register}
+                    error={errors.lastName}
                 />
                 <FormInput
                     label="Email"

@@ -1,12 +1,17 @@
 'use client'
+import { register } from '@/api/auth';
 import RegisterForm from '@/components/form/register';
 import { IRegisterForm } from '@/types/interfaces/auth';
 import React from 'react';
 
-const Register: React.FC = () => {
+const Register = () => {
 
-  const handleFormSubmit = (data: IRegisterForm) => {
-    console.log(data);
+  const handleFormSubmit = async (data: IRegisterForm) => {
+    try {
+      const res = await register(data);
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (
