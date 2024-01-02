@@ -28,7 +28,7 @@ const RegisterForm = ({ onSubmit }: IRegisterFormProps) => {
                     name="username"
                     type="text"
                     register={register}
-                    error={errors.password}
+                    error={errors.username}
                 />
                 <FormInput
                     label="Email"
@@ -48,7 +48,7 @@ const RegisterForm = ({ onSubmit }: IRegisterFormProps) => {
             <div className="flex items-center justify-center flex-col">
                 <button
                     type="submit"
-                    className="px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600">
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Register
                 </button>
             </div>

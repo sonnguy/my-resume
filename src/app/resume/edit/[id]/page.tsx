@@ -1,4 +1,5 @@
-import ResumeContent from "../../components/content";
+'use client'
+import ResumeEditContent from "../../components/contentEdit";
 import ResumeHeader from "../../components/header";
 import ResumePersonalInfo from "../../components/personalInfo";
 
@@ -9,7 +10,7 @@ export default function ResumeEdit() {
         <ResumeHeader />
         <div className="flex">
           <ResumePersonalInfo />
-          <ResumeContent />
+          <ResumeEditContent />
         </div>
       </div>
     </div>
