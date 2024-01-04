@@ -1,18 +1,31 @@
 'use client'
-import { register } from '@/api/auth';
 import RegisterForm from '@/components/form/register';
+import { registerUser } from '@/store/authSlice';
+import { RootState } from '@/store/reducers';
 import { IRegisterForm } from '@/types/interfaces/auth';
-import React from 'react';
+import { useRouter } from 'next/navigation';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Register = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const loading = useSelector((state: RootState) => state.auth.loading);
+  const user = useSelector((state: RootState) => state.auth.user);
 
-  const handleFormSubmit = async (data: IRegisterForm) => {
+  const handleFormSubmit = (data: IRegisterForm) => {
     try {
-      const res = await register(data);
+      dispatch(registerUser(data));
     } catch (error) {
       console.log(error)
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      router.push('/');
+    }
+  }, [loading, user])
 
   return (
     <div className="flex justify-center items-center w-full h-full bg-gray-100">

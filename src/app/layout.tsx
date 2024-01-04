@@ -4,6 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import ToastProvider from '@/providers/toast.provider'
+import store from '@/store/store';
+import { Providers } from '@/providers/store.provider';
 
 export const metadata: Metadata = {
   title: 'My Resume',
@@ -18,11 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="h-screen flex flex-col">
-        <ToastProvider>
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </ToastProvider>
+        <Providers>
+          <ToastProvider>
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </ToastProvider>
+        </Providers>
       </body>
     </html>
   )

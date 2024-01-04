@@ -1,3 +1,4 @@
+import { IUser } from '@/types/interfaces/user';
 import { ILoginForm, IRegisterForm } from "@/types/interfaces/auth";
 import api from "./baseApi";
 
